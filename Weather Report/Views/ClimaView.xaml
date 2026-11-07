@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Weather_Report.Views.ClimaView"
+    Title="Weather Report">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
+
+            <Label
+                Text="Weather Report"
+                TextColor="DarkRed"
+                FontAttributes="Bold"
+                FontSize="32"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Image
+                x:Name="ClimaIcon"
+                Source="default_icon.png"
+                HeightRequest="130"
+                WidthRequest="130"
+                Aspect="AspectFit"
+                HorizontalOptions="Center" />
+
+            <Label
+                x:Name="condicaoClima"
+                Text="Condição do clima: não atualizado"
+                FontSize="20"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"
+                LineBreakMode="WordWrap" />
+            <Label
+                x:Name="cidadeLabel"
+                Text="{Binding Cidade}"
+                FontSize="20"
+                TextColor="Black"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"
+                LineBreakMode="WordWrap" />
+            <Button
+                Text="Clique aqui"
+                Command="{Binding getPrevisaoCommand}"
+                ></Button>
+            <Label
+                Text="Informações do Clima"
+                FontSize="26"
+                FontAttributes="Bold"
+                TextColor="BlueViolet"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                RowDefinitions="Auto,Auto,Auto,Auto"
+                ColumnSpacing="15"
+                RowSpacing="20"
+                Padding="5">
+
+                <VerticalStackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Spacing="5">
+
+                    <Label
+                        Text="Mínima"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="Black" />
+
+                    <Label
+                        x:Name="minimaTemp"
+                        Text="0°C"
+                        FontSize="24"
+                        TextColor="DarkBlue" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Spacing="5">
+
+                    <Label
+                        Text="Máxima"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="Black" />
+
+                    <Label
+                        x:Name="maximaTemp"
+                        Text="0°C"
+                        FontSize="24"
+                        TextColor="DarkRed" />
+                </VerticalStackLayout>
+                
+                <VerticalStackLayout
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Spacing="5">
+
+                    <Label
+                        Text="Índice UV"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="Black" />
+
+                    <Label
+                        x:Name="uvTemp"
+                        Text="0"
+                        FontSize="24"
+                        TextColor="DarkOrange" />
+                </VerticalStackLayout>
+
+                <VerticalStackLayout
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Spacing="5">
+
+                    <Label
+                        Text="Descrição do clima"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="Black" />
+
+                    <Label
+                        x:Name="descTemp"
+                        Text="Não disponível"
+                        FontSize="18"
+                        TextColor="Black"
+                        LineBreakMode="WordWrap" />
+                </VerticalStackLayout>
+
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
